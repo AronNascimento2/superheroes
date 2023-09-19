@@ -3,9 +3,14 @@ import { Modal } from "../Modal";
 import CharacterProgressBar from "../CharacterProgressBar";
 import { Card } from "../Card";
 import { Tabs } from "../../../Tabs";
+import { Biography } from "../Biography";
 
 type Powerstats = {
   [key: string]: number;
+};
+
+type Biography = {
+  [key: string]: string;
 };
 
 type CardProps = {
@@ -13,12 +18,14 @@ type CardProps = {
   name?: string;
   description?: string;
   powerstats?: Powerstats;
+  biography?: Biography;
 };
 
 export const ContentCharacter: React.FC<CardProps> = ({
   image,
   name,
   powerstats,
+  biography,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,7 +44,8 @@ export const ContentCharacter: React.FC<CardProps> = ({
       content: (
         <div>
           <h2>Conteúdo da Biografia</h2>
-          <CharacterProgressBar attributes={powerstats || {}} />
+          <Biography biography={biography ?? {}} />
+          <CharacterProgressBar attributes={powerstats ?? {}} />
         </div>
       ),
     },
@@ -47,7 +55,6 @@ export const ContentCharacter: React.FC<CardProps> = ({
       content: (
         <div>
           <h2>Conteúdo da Aparência</h2>
-          {/* Conteúdo da aba de aparência */}
         </div>
       ),
     },
