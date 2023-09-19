@@ -30,4 +30,15 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
   }
+  .close {
+    position: relative;
+    left: 97%;
+    bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+  }
 `;

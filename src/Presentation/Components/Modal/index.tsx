@@ -22,8 +22,8 @@ export const Modal: React.FC<ModalProps> = ({
       {open && <div onClick={handleClose} className="backdrop"></div>}
       <div className="modal">
         <div className="modal-content">
-          <span className="close" onClick={handleClose}>
-            &times;
+          <span className="close cursor-pointer" onClick={handleClose}>
+            <img src="close.png" alt="" style={{ width: "30px" }} />
           </span>
           {children}
         </div>

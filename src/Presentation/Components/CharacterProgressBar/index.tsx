@@ -24,13 +24,16 @@ const CharacterProgressBar: React.FC<CharacterProgressBarProps> = ({
   };
 
   return (
-    <div className=" flex max-w-md flex-col gap-1 w-full">
+    <div className=" flex  flex-col gap-1 w-full">
       {Object.entries(attributes).map(([attribute, value]) => (
-        <div className="flex items-center gap-1 w-full justify-between">
-          <span className="attribute-label">{attribute}</span>
-          <div>
+        <div
+          key={value}
+          className="flex gap-1 w-full justify-between items-center "
+        >
+          <span className="w-32 attribute-label">{attribute}</span>
+          <div className="w-full flex justify-center items-center ">
             <div
-              className="w-80 h-2 bg-neutral-300 relative flex items-center rounded-xl"
+              className="w-full h-2 bg-neutral-300 relative flex  rounded-xl"
               key={attribute}
             >
               <div
@@ -42,7 +45,7 @@ const CharacterProgressBar: React.FC<CharacterProgressBarProps> = ({
               />
             </div>
           </div>
-          <span className="attribute-label">{value}</span>
+          <span className="attribute-label w-10 text-end">{value}</span>
         </div>
       ))}
     </div>

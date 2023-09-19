@@ -4,6 +4,8 @@ import CharacterProgressBar from "../CharacterProgressBar";
 import { Card } from "../Card";
 import { Tabs } from "../../../Tabs";
 import { Biography } from "../Biography";
+import { HeroConnections } from "../HeroConnections";
+import { Appearance } from "../Appearance";
 
 type Powerstats = {
   [key: string]: number;
@@ -19,6 +21,8 @@ type CardProps = {
   description?: string;
   powerstats?: Powerstats;
   biography?: Biography;
+  connections?: Biography;
+  appearance?: Biography;
 };
 
 export const ContentCharacter: React.FC<CardProps> = ({
@@ -26,6 +30,8 @@ export const ContentCharacter: React.FC<CardProps> = ({
   name,
   powerstats,
   biography,
+  connections,
+  appearance,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,31 +46,37 @@ export const ContentCharacter: React.FC<CardProps> = ({
   const tabs = [
     {
       id: "biography",
-      label: "Biografia",
+      label: "BIOGRAPHY",
       content: (
         <div>
-          <h2>Conteúdo da Biografia</h2>
           <Biography biography={biography ?? {}} />
+        </div>
+      ),
+    },
+    {
+      id: "powerstats",
+      label: "POWERSTATS",
+      content: (
+        <div>
           <CharacterProgressBar attributes={powerstats ?? {}} />
         </div>
       ),
     },
     {
       id: "appearance",
-      label: "Aparência",
+      label: "APPEARANCE",
       content: (
         <div>
-          <h2>Conteúdo da Aparência</h2>
+          <Appearance appearance={appearance ?? {}} />
         </div>
       ),
     },
     {
-      id: "others",
-      label: "Outros",
+      id: "connections",
+      label: "CONNECTIONS",
       content: (
         <div>
-          <h2>Conteúdo de Outros</h2>
-          {/* Conteúdo da aba de outros */}
+          <HeroConnections connections={connections ?? {}} />
         </div>
       ),
     },
