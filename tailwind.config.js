@@ -6,6 +6,11 @@ export default {
       spacing: {
         vh: "100vh",
       },
+      colors: {
+        blue: {
+          500: "#3b82f6", // Substitua pela sua cor azul desejada
+        },
+      },
     },
   },
   plugins: [],

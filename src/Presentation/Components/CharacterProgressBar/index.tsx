@@ -1,5 +1,4 @@
 import React from "react";
-import "./st.css";
 
 interface AttributeColors {
   [key: string]: string;

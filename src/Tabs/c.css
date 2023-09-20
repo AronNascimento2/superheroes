@@ -30,6 +30,7 @@
   }
   
   .tab-pane {
+    width: 580px;
     display: none;
     padding: 20px;
     border: 1px solid #ddd;

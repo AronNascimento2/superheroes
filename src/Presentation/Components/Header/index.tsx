@@ -13,27 +13,39 @@ export const Header: React.FC<HeaderProps> = ({ onSearch }) => {
     const term: string = event.target.value;
     setSearchTerm(term);
   };
-
+  const handleremove = () => {
+    setSearchTerm("");
+  };
   // Use o debouncedSearchTerm para fazer a pesquisa após o atraso
   useEffect(() => {
     onSearch(debouncedSearchTerm);
   }, [debouncedSearchTerm, onSearch]);
 
   return (
-    <div className="w-full bg-gray-500 h-auto p-5 ">
+    <div className="w-full  h-auto p-5 ">
       <div className="flex items-center justify-center flex-col">
         <img
           src="super.png"
           alt=""
           style={{ width: "200px", height: "180px" }}
         />
-        <div className="w-96 bg-white h-10 flex items-center  rounded-3xl p-5">
+        <div className="relative w-96">
           <input
+            className="w-full bg-white h-10 rounded-3xl p-5 pr-10 text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             type="text"
-            placeholder="Pesquisar heróis"
+            placeholder="Encontre seu herói..."
             value={searchTerm}
             onChange={handleSearchChange}
           />
+
+          {searchTerm && (
+            <img
+              onClick={handleremove}
+              src="closeIcon.png"
+              alt=""
+              className="w-5 h-5 absolute top-1/2 right-5 transform -translate-y-1/2 cursor-pointer"
+            />
+          )}
         </div>
       </div>
     </div>

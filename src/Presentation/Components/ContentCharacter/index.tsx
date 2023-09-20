@@ -3,9 +3,9 @@ import { Modal } from "../Modal";
 import CharacterProgressBar from "../CharacterProgressBar";
 import { Card } from "../Card";
 import { Tabs } from "../../../Tabs";
-import { Biography } from "../Biography";
-import { HeroConnections } from "../HeroConnections";
-import { Appearance } from "../Appearance";
+import { Biography } from "../TabsContents/Biography";
+import { Appearance } from "../TabsContents/Appearance";
+import { HeroConnections } from "../TabsContents/HeroConnections";
 
 type Powerstats = {
   [key: string]: number;
@@ -48,7 +48,7 @@ export const ContentCharacter: React.FC<CardProps> = ({
       id: "biography",
       label: "BIOGRAPHY",
       content: (
-        <div>
+        <div className="">
           <Biography biography={biography ?? {}} />
         </div>
       ),
@@ -89,7 +89,7 @@ export const ContentCharacter: React.FC<CardProps> = ({
       </div>
       {isOpen && (
         <Modal open={isOpen} handleClose={handleClose}>
-          <div className="flex gap-2 w-full">
+          <div className="flex gap-2 ">
             <img src={image?.url} style={{ width: "400px", height: "500px" }} />
             <Tabs tabs={tabs} />
           </div>

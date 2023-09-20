@@ -10,7 +10,7 @@ export const Container = styled.div`
 
   .spinner {
     border: 4px solid rgba(0, 0, 0, 0.3);
-    border-top: 4px solid #3498db;
+    border-top: 4px solid #8257e6;
     border-radius: 50%;
     width: 200px;
     height: 200px;
