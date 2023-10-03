@@ -1,8 +1,11 @@
 export type Hero = {
   id: number; // Adicione a propriedade id se necessário
   name: string;
-  image: {
-    url: string;
+  images: {
+    xl: string;
+    lg:string;
+    sd:string;
+    md:string
   };
   description: string;
   powerstats: {
@@ -16,9 +19,9 @@ export type Hero = {
   appearance: {
     gender: string;
     race: string;
-    height: string[];
-    weight: string[];
-    eyecolor: string[];
-    haircolor: string[];
+    height: string;
+    weight: string;
+    eyecolor: string;
+    haircolor: string;
   };
 };

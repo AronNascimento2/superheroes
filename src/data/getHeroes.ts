@@ -1,14 +1,18 @@
 import axios from "axios";
 import { Hero } from "../domain/model";
 
-const apiUrl = "https://superheroapi.com/api/5903141623089276";
-
-const corsProxyUrl = "https://thingproxy.freeboard.io/fetch/";
+const apiUrl = "https://akabab.github.io/superhero-api/api/all.json";
 
 export const getHeroes = (searchTerm: string): Promise<Hero[]> => {
-  const searchUrl = `${apiUrl}/search/${searchTerm}`;
 
   return axios
-    .get(corsProxyUrl + searchUrl)
-    .then((response) => response.data.results);
+    .get(apiUrl)
+    .then((response) => {
+      // Filtrar os heróis com base no searchTerm
+      const filteredHeroes = response.data.filter((hero: Hero) =>
+        hero.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      return filteredHeroes;
+    });
 };

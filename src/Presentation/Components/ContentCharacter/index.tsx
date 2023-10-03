@@ -16,7 +16,12 @@ type Biography = {
 };
 
 type CardProps = {
-  image?: { url?: string };
+  images?: {
+    xl: string;
+    lg:string;
+    sd:string;
+    md:string
+  };
   name?: string;
   description?: string;
   powerstats?: Powerstats;
@@ -26,7 +31,7 @@ type CardProps = {
 };
 
 export const ContentCharacter: React.FC<CardProps> = ({
-  image,
+  images,
   name,
   powerstats,
   biography,
@@ -85,12 +90,12 @@ export const ContentCharacter: React.FC<CardProps> = ({
   return (
     <>
       <div onClick={handleOpen}>
-        <Card name={name} image={image?.url} />
+        <Card name={name} image={images?.lg} />
       </div>
       {isOpen && (
         <Modal open={isOpen} handleClose={handleClose}>
           <div className="flex gap-2 ">
-            <img src={image?.url} style={{ width: "400px", height: "500px" }} />
+            <img src={images?.lg} style={{ width: "400px", height: "500px" }} />
             <Tabs tabs={tabs} />
           </div>
         </Modal>
