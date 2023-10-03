@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearch }) => {
           <input
             className="w-full bg-white h-10 rounded-3xl p-5 pr-10 text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             type="text"
-            placeholder="Encontre seu herói..."
+            placeholder="Find your hero..."
             value={searchTerm}
             onChange={handleSearchChange}
           />
