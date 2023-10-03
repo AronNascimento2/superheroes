@@ -47,8 +47,8 @@ export const Container = styled.div`
     .modal{
       width: 400px;
       left: 1.2%;
-    top: 18%;
-    padding: 10px;
+      top: 10%;
+      padding: 10px;
 
   }
   .close {
