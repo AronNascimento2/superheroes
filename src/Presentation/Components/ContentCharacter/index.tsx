@@ -19,7 +19,7 @@ type CardProps = {
   images?: {
     xl: string;
     lg:string;
-    sd:string;
+    sm:string;
     md:string
   };
   name?: string;
@@ -53,7 +53,7 @@ export const ContentCharacter: React.FC<CardProps> = ({
       id: "biography",
       label: "BIOGRAPHY",
       content: (
-        <div className="">
+        <div>
           <Biography biography={biography ?? {}} />
         </div>
       ),
@@ -93,12 +93,12 @@ export const ContentCharacter: React.FC<CardProps> = ({
         <Card name={name} image={images?.lg} />
       </div>
       {isOpen && (
-        <Modal open={isOpen} handleClose={handleClose}>
-          <div className="flex gap-2 ">
-            <img src={images?.lg} style={{ width: "400px", height: "500px" }} />
-            <Tabs tabs={tabs} />
-          </div>
-        </Modal>
+       <Modal open={isOpen} handleClose={handleClose}>
+       <div className="flex flex-col items-center lg:flex-row lg:items-stretch gap-2 overflow-auto">
+         <img src={images?.lg}   className="w-56 h-96  lg:w-xlw h-full" alt={name} />
+         <Tabs tabs={tabs}  />
+       </div>
+     </Modal>
       )}
     </>
   );

@@ -11,7 +11,6 @@ export const Container = styled.div`
     padding: 20px;
     z-index: 1000; /* Coloca o modal na frente do backdrop */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    height: 600px;
     position: fixed;
     left: 23%;
     top: 20%;
@@ -32,7 +31,7 @@ export const Container = styled.div`
   }
   .close {
     position: relative;
-    left: 97%;
+    left: 96.9%;
     bottom: 70px;
     display: flex;
     justify-content: center;
@@ -43,5 +42,18 @@ export const Container = styled.div`
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
       rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  @media(max-width:768px){
+    .modal{
+      width: 355px;
+      left: 2%;
+    top: 18%;
+    padding: 10px;
+
+  }
+  .close {
+    position: relative;
+    left: 88.1%;
+    bottom: 60px;}
   }
 `;

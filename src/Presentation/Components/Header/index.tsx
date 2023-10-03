@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ onSearch }) => {
           alt=""
           style={{ width: "200px", height: "180px" }}
         />
-        <div className="relative w-96">
+        <div className="relative w-72 lg:w-96">
           <input
             className="w-full bg-white h-10 rounded-3xl p-5 pr-10 text-black focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
             type="text"

@@ -40,4 +40,20 @@
   .tab-pane.active {
     display: block;
   }
+
+  @media(max-width:768px){
+    .tab-pane {
+      width: 330px;
+      font-size: 11px;
+     
+    }
+    .tab-header{
+      width: 330px;
+   
+    }
+    .tab-button{
+      font-size: 12px;
+      padding: 2px;
+    }
+  }
   

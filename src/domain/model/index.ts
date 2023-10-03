@@ -4,7 +4,7 @@ export type Hero = {
   images: {
     xl: string;
     lg:string;
-    sd:string;
+    sm:string;
     md:string
   };
   description: string;

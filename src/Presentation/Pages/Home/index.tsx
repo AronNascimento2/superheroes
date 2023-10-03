@@ -37,9 +37,9 @@ export const Home: React.FC = () => {
     content = <div className="text-red-600 w-72 text-center pt-4">{error}</div>;
   } else {
     content = (
-      <div className="items-center justify-center flex flex-wrap gap-4 m-7">
+      <div className="m-0 gap-1 lg:items-center justify-center flex flex-wrap gap-4 m-7">
         {heroes?.map((hero) => (
-          <ContentCharacter {...hero} />
+          <ContentCharacter key={hero.id} {...hero} />
         ))}
       </div>
     );
