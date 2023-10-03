@@ -45,15 +45,15 @@ export const Container = styled.div`
   }
   @media(max-width:768px){
     .modal{
-      width: 355px;
-      left: 2%;
+      width: 400px;
+      left: 1.2%;
     top: 18%;
     padding: 10px;
 
   }
   .close {
     position: relative;
-    left: 88.1%;
+    left: 89.4%;
     bottom: 60px;}
   }
 `;
